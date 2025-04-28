@@ -10,9 +10,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  bumil_app:
-    path: ../bumil_app
-
   flutter:
     sdk: flutter
     

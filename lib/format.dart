@@ -34,7 +34,9 @@ String date_to_string_MMdd_middlebar(DateTime date) {
 String date_to_string_MMdd(String type, DateTime date) {
   try {
     String format_date = '';
-    if (type == 'kor') {
+    if (type == '-') {
+      format_date = DateFormat("M-d").format(date);
+    } else if (type == 'kor') {
       format_date = DateFormat("M월 d일").format(date);
     } else if (type == 'kor_date') {
       format_date = DateFormat('MM월 dd일 EEEE', 'ko_KR').format(date);
