@@ -64,15 +64,10 @@ TextStyle lightrange(double size, FontWeight weight) {
   );
 }
 
-TextStyle custom(double size, FontWeight weight, Color color, [TextDecoration deco = TextDecoration.none, Color deco_color = Colors.black]) {
+TextStyle custom(double size, FontWeight weight, Color color,
+    [TextDecoration? deco = TextDecoration.none, Color? deco_color = Colors.black, double height = 0]) {
   return TextStyle(
-    fontFamily: 'Pretendard',
-    fontSize: size,
-    fontWeight: weight,
-    color: color,
-    decoration: deco,
-    decorationColor: deco_color,
-  );
+      fontFamily: 'Pretendard', fontSize: size, fontWeight: weight, color: color, decoration: deco, decorationColor: deco_color, height: height);
 }
 
 TextStyle orange_wh(double size, FontWeight weight, double height) {

@@ -142,6 +142,11 @@ String time_to_string_HHmmss(DateTime date) {
   return return_date;
 }
 
+String time_to_string_HHmm(DateTime date) {
+  String return_date = DateFormat('HH:mm').format(date);
+  return return_date;
+}
+
 String car_number_reform(String number) {
   if (number.length > 4) {
     String reform_data = '${number.substring(0, number.length - 4)}\n${number.substring(number.length - 4)}';
@@ -162,6 +167,19 @@ String time_calculation(DateTime dateTime) {
   } else if (difference.inHours < 24) {
     return '${difference.inHours}시간 전';
   } else {
-    return '${difference.inDays}일 전';
+    return date_to_string_yyyyMMdd('.', dateTime);
   }
+}
+
+String int_to_unit_string(int count) {
+  if (count >= 100000) {
+    String unit = '99k+';
+    return unit;
+  } else if (count >= 1000) {
+    int front_unit = (count / 1000).floor();
+    var back_unit = ((count % 1000) / 100).floor();
+    String unit = '$front_unit.${back_unit}k';
+    return unit;
+  }
+  return count.toString();
 }

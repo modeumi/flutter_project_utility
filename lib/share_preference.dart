@@ -10,7 +10,9 @@ class SharePreference {
           ? await prefs.setString(key, value)
           : type == 'bool'
               ? await prefs.setBool(key, value)
-              : null;
+              : type == 'list'
+                  ? await prefs.setStringList(key, value)
+                  : null;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'save', key);
     }
@@ -22,7 +24,9 @@ class SharePreference {
           ? await prefs.getString(key) ?? ''
           : type == 'bool'
               ? await prefs.getBool(key) ?? false
-              : 'null';
+              : type == 'list'
+                  ? await prefs.getStringList(key) ?? []
+                  : 'null';
       return data;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'read', key);

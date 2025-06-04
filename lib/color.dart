@@ -37,3 +37,11 @@ Color manage_main_color = const Color(0xFF4BA5CA);
 Color manage_sub_color = const Color(0xFF152872);
 Color manage_back_color = const Color(0xFF424242);
 Color manage_back_grey = const Color.fromRGBO(70, 70, 70, 1);
+
+Color mobilhi_main = const Color(0xFF172852);
+Color mobilhi_sub = const Color(0xFFD8DFA6);
+Color mobilhi_grey_1 = const Color(0xFF818181);
+Color mobilhi_grey_2 = const Color(0xFFE6E6E6);
+Color mobilhi_grey_3 = const Color(0xFFF6F6F6);
+Color mobilhi_red = const Color(0xFFFF0000);
+Color mobilhi_blue = const Color(0xFF0070C0);
