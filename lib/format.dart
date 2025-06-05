@@ -22,15 +22,6 @@ String date_to_string_yyyyMMdd(String type, DateTime date) {
   return format_date;
 }
 
-String date_to_string_MMdd_middlebar(DateTime date) {
-  try {
-    String format_date = DateFormat("MM-dd").format(date);
-    return format_date;
-  } catch (e) {
-    return date.toString();
-  }
-}
-
 String date_to_string_MMdd(String type, DateTime date) {
   try {
     String format_date = '';
@@ -101,23 +92,14 @@ String reforme_time_short(String type, String time) {
   return return_time;
 }
 
-String reforme_date_short(String date) {
-  final regExp_pattern = RegExp(r'\b\d{4}-\d{2}-\d{2}\b');
+String date_to_String_yyyyMMdddate_Kor_NL(String type, DateTime date) {
   String return_date = '';
-  if (regExp_pattern.hasMatch(date)) {
-    List<String> split_time = date.split('-').sublist(1, 3);
-    return_date = split_time.join('-');
+  if (type == 'newline') {
+    return_date = DateFormat('yyyy년\nMM월 dd일 EEEE', 'ko_KR').format(date);
+  } else if (type == 'normal') {
+    return_date = DateFormat('yyyy년 MM월 dd일 EEEE', 'ko_KR').format(date);
   }
-  return return_date;
-}
 
-String date_to_String_yyyyMMdddate_Kor_NL(DateTime date) {
-  String return_date = DateFormat('yyyy년\nMM월 dd일 EEEE', 'ko_KR').format(date);
-  return return_date;
-}
-
-String date_to_String_yyyyMMdddate_Kor(DateTime date) {
-  String return_date = DateFormat('yyyy년 MM월 dd일 EEEE', 'ko_KR').format(date);
   return return_date;
 }
 
