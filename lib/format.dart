@@ -1,23 +1,35 @@
 import 'package:intl/intl.dart';
 
-String date_to_string_yyMM(String type, DateTime date) {
+String date_to_string_yyMM(String type, dynamic date) {
+  DateTime request_date;
+  if (date.runtimeType == String) {
+    request_date = DateTime.parse(date);
+  } else {
+    request_date = date;
+  }
   String format_date = '';
   if (type == 'kor') {
-    format_date = DateFormat("yyyy년 MM월").format(date);
+    format_date = DateFormat("yyyy년 MM월").format(request_date);
   } else if (type == '-') {
-    format_date = DateFormat("yyyy-MM").format(date);
+    format_date = DateFormat("yyyy-MM").format(request_date);
   }
-  return format_date != '' ? format_date : date.toString();
+  return format_date != '' ? format_date : request_date.toString();
 }
 
-String date_to_string_yyyyMMdd(String type, DateTime date) {
+String date_to_string_yyyyMMdd(String type, dynamic date) {
+  DateTime request_date;
+  if (date.runtimeType == String) {
+    request_date = DateTime.parse(date);
+  } else {
+    request_date = date;
+  }
   String format_date = '';
   if (type == '-') {
-    format_date = DateFormat("yyyy-MM-dd").format(date);
+    format_date = DateFormat("yyyy-MM-dd").format(request_date);
   } else if (type == '.') {
-    format_date = DateFormat("yyyy.MM.dd").format(date);
+    format_date = DateFormat("yyyy.MM.dd").format(request_date);
   } else if (type == 'kor') {
-    format_date = DateFormat("yyyy년 MM월 dd일").format(date);
+    format_date = DateFormat("yyyy년 MM월 dd일").format(request_date);
   }
   return format_date;
 }
@@ -26,7 +38,7 @@ String date_to_string_MMdd(String type, DateTime date) {
   try {
     String format_date = '';
     if (type == '-') {
-      format_date = DateFormat("M-d").format(date);
+      format_date = DateFormat("MM-dd").format(date);
     } else if (type == 'kor') {
       format_date = DateFormat("M월 d일").format(date);
     } else if (type == 'kor_date') {
@@ -92,9 +104,9 @@ String reforme_time_short(String type, String time) {
   return return_time;
 }
 
-String date_to_String_yyyyMMdddate_Kor_NL(String type, DateTime date) {
+String date_to_String_yyyyMMdddate_Kor(String type, DateTime date) {
   String return_date = '';
-  if (type == 'newline') {
+  if (type == 'new_line') {
     return_date = DateFormat('yyyy년\nMM월 dd일 EEEE', 'ko_KR').format(date);
   } else if (type == 'normal') {
     return_date = DateFormat('yyyy년 MM월 dd일 EEEE', 'ko_KR').format(date);
