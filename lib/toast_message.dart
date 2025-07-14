@@ -7,13 +7,13 @@ import 'package:oktoast/oktoast.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class ToastMessage {
-  void ShowToast(String message, [String? type]) {
+  void ShowToast(String message, [String? type, double? size]) {
     showToastWidget(
       duration: const Duration(seconds: 3),
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          type == 'bottom' ? Spacer() : Container(),
+          type == 'bottom' ? const Spacer() : Container(),
           Container(
             width: double.infinity,
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 150),
@@ -29,13 +29,13 @@ class ToastMessage {
               child: AutoSizeText(
                 textAlign: TextAlign.center,
                 message,
-                style: black(20, FontWeight.w600),
+                style: black(size ?? 20, FontWeight.w600),
                 maxLines: 3,
                 minFontSize: 15,
               ),
             ),
           ),
-          type == 'top' ? Spacer() : Container()
+          type == 'top' ? const Spacer() : Container()
         ],
       ),
     );

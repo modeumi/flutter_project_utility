@@ -12,7 +12,9 @@ class SharePreference {
               ? await prefs.setBool(key, value)
               : type == 'list'
                   ? await prefs.setStringList(key, value)
-                  : null;
+                  : type == 'double'
+                      ? await prefs.setDouble(key, value)
+                      : null;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'save', key);
     }
@@ -26,7 +28,9 @@ class SharePreference {
               ? await prefs.getBool(key) ?? false
               : type == 'list'
                   ? await prefs.getStringList(key) ?? []
-                  : 'null';
+                  : type == 'double'
+                      ? await prefs.getDouble(key) ?? 0
+                      : 'null';
       return data;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'read', key);
@@ -48,5 +52,16 @@ class SharePreference {
 
   Future<void> delete_all() async {
     await prefs.clear();
+  }
+
+  Future<List<dynamic>> Get_Keys() async {
+    try {
+      dynamic value = await prefs.getKeys();
+      List<String> keys = value.toList();
+      return keys;
+    } catch (e) {
+      LocalStorageError('Shared Preferences', e.toString(), 'Get_Keys', '');
+      return [];
+    }
   }
 }
