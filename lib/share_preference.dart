@@ -14,7 +14,9 @@ class SharePreference {
                   ? await prefs.setStringList(key, value)
                   : type == 'double'
                       ? await prefs.setDouble(key, value)
-                      : null;
+                      : type == 'int'
+                          ? await prefs.setInt(key, value)
+                          : null;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'save', key);
     }
@@ -30,7 +32,9 @@ class SharePreference {
                   ? await prefs.getStringList(key) ?? []
                   : type == 'double'
                       ? await prefs.getDouble(key) ?? 0
-                      : 'null';
+                      : type == 'int'
+                          ? await prefs.getInt(key) ?? 0
+                          : 'null';
       return data;
     } catch (e) {
       LocalStorageError('Shared Preferences', e.toString(), 'read', key);

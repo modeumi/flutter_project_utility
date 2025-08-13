@@ -8,11 +8,12 @@ Widget Show_Dialog(Widget title, Widget content, VoidCallback action, VoidCallba
     insetPadding: const EdgeInsets.symmetric(horizontal: 20),
     elevation: 10,
     child: Container(
+      padding: const EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
-      constraints: const BoxConstraints(maxHeight: double.infinity * 0.6),
+      // constraints: const BoxConstraints(maxHeight: double.infinity * 0.6),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -20,7 +21,7 @@ Widget Show_Dialog(Widget title, Widget content, VoidCallback action, VoidCallba
             title,
             Padding(
               padding: const EdgeInsets.all(
-                10.0,
+                15.0,
               ),
               child: content,
             ),
