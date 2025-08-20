@@ -11,3 +11,8 @@ export 'package:package_info_plus/package_info_plus.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:oktoast/oktoast.dart';
 export 'package:permission_handler/permission_handler.dart';
+export 'package:table_calendar/table_calendar.dart';
+export 'package:auto_size_text/auto_size_text.dart';
+export 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+export 'package:widget_zoom/widget_zoom.dart';
+export 'package:url_launcher/url_launcher_string.dart';

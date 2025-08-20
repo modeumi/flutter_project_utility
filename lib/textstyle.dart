@@ -64,8 +64,7 @@ TextStyle lightrange(double size, FontWeight weight) {
   );
 }
 
-TextStyle custom(double size, FontWeight weight, Color color,
-    [TextDecoration? deco = TextDecoration.none, Color? deco_color = Colors.black, double height = 0]) {
+TextStyle custom(double size, FontWeight weight, Color color, [TextDecoration? deco, Color? deco_color = Colors.black, double? height]) {
   return TextStyle(
       fontFamily: 'Pretendard', fontSize: size, fontWeight: weight, color: color, decoration: deco, decorationColor: deco_color, height: height);
 }
