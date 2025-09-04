@@ -7,7 +7,8 @@ import 'package:utile/textstyle.dart';
 class AccentTitle extends StatefulWidget {
   final String title;
   final Color? accent_color;
-  const AccentTitle({super.key, required this.title, this.accent_color});
+  final double? font_size;
+  const AccentTitle({super.key, required this.title, this.accent_color, this.font_size});
 
   @override
   State<AccentTitle> createState() => _AccentTitleState();
@@ -39,7 +40,7 @@ class _AccentTitleState extends State<AccentTitle> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5.0),
-          child: asText(widget.title, black(20, FontWeight.w600)),
+          child: asText(widget.title, black(widget.font_size ?? 20, FontWeight.w600)),
         ),
         Row(
           children: [

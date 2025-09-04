@@ -10,15 +10,11 @@ class SecureStorage extends GetxController {
   ));
   ToastMessage toast = ToastMessage();
 
-  Future<void> save(Map<String, dynamic> datas) async {
-    String error_key = '';
+  Future<void> save(String key, dynamic value) async {
     try {
-      for (String key in datas.keys) {
-        error_key = key;
-        await storage.write(key: key, value: datas[key]);
-      }
+      await storage.write(key: key, value: value.toString());
     } catch (e) {
-      LocalStorageError('Secure Storage', e.toString(), 'save', error_key);
+      LocalStorageError('Secure Storage', e.toString(), 'save', key);
     }
   }
 
@@ -51,14 +47,6 @@ class SecureStorage extends GetxController {
     } catch (e) {
       LocalStorageError('Secure Storage', e.toString(), 'delete_all', '');
     }
-  }
-
-  Future<bool> autologin() async {
-    String autologin = await read('autologin');
-    if (autologin == '') {
-      autologin = 'false';
-    }
-    return bool.parse(autologin);
   }
 
   // secure storage 저장 데이터 확인용 함수

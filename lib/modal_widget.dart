@@ -7,8 +7,9 @@ import 'package:utile/textstyle.dart';
 class ModalWidget extends StatefulWidget {
   final String title;
   final String content;
+  final Widget? contentWidget;
   final VoidCallback action;
-  const ModalWidget({super.key, required this.title, required this.content, required this.action});
+  const ModalWidget({super.key, required this.title, required this.content, required this.action, this.contentWidget});
 
   @override
   State<ModalWidget> createState() => _ModalWidgetState();
@@ -31,7 +32,7 @@ class _ModalWidgetState extends State<ModalWidget> {
             children: [
               Container(
                 width: 1.0.sw,
-                padding: EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1, color: color_grey))),
                 child: Center(child: asText(widget.title, custom(20, FontWeight.w700, color_black))),
               ),
@@ -40,13 +41,14 @@ class _ModalWidgetState extends State<ModalWidget> {
                 decoration: BoxDecoration(
                   border: Border(bottom: BorderSide(width: 1, color: color_grey)),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: Text(
                   widget.content,
                   style: custom(17, FontWeight.w500, color_black),
                   textAlign: TextAlign.center,
                 ),
               ),
+              if (widget.contentWidget != null) widget.contentWidget!,
               Row(
                 children: [
                   Flexible(
@@ -58,7 +60,7 @@ class _ModalWidgetState extends State<ModalWidget> {
                         decoration: BoxDecoration(
                           border: Border(right: BorderSide(width: 0.5, color: mobilhi_grey_1)),
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         child: Center(
                           child: Text(
                             '아니오',
@@ -77,7 +79,7 @@ class _ModalWidgetState extends State<ModalWidget> {
                         decoration: BoxDecoration(
                           border: Border(left: BorderSide(width: 0.5, color: mobilhi_grey_1)),
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         child: Center(
                           child: Text(
                             '예',

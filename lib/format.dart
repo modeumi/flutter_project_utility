@@ -141,6 +141,22 @@ String time_to_string_HHmm(DateTime date) {
   return return_date;
 }
 
+String time_to_string(String type, DateTime date) {
+  String return_data = '';
+  if (type == 'hmss') {
+    return_data = DateFormat('HH:mm:ss SSS').format(date);
+  } else if (type == 'hms') {
+    return_data = DateFormat('HH:mm:ss').format(date);
+  } else if (type == 'hm') {
+    return_data = DateFormat('HH:mm').format(date);
+  } else if (type == 'ms') {
+    return_data = DateFormat('mm:ss').format(date);
+  } else if (type == 'mss') {
+    return_data = DateFormat('mm:ss SSS').format(date);
+  }
+  return return_data;
+}
+
 String car_number_reform(String number) {
   if (number.length > 4) {
     String reform_data = '${number.substring(0, number.length - 4)}\n${number.substring(number.length - 4)}';

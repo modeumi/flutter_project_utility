@@ -31,7 +31,7 @@ Color back_grey = const Color(0xFFF6F6F6);
 Color back_grey_2 = const Color(0xFFEAEAEA);
 Color back_grey_3 = const Color(0xFFF7F7F7);
 
-Color font_color_blue = Color(0xFF152872);
+Color font_color_blue = const Color(0xFF152872);
 
 Color manage_main_color = const Color(0xFF4BA5CA);
 Color manage_sub_color = const Color(0xFF152872);
@@ -39,12 +39,26 @@ Color manage_back_color = const Color(0xFF424242);
 Color manage_back_grey = const Color.fromRGBO(70, 70, 70, 1);
 
 Color mobilhi_main = const Color(0xFF3E518C);
+Color mobilhi_main_deep = const Color(0xFF0E2469);
+Color mobilhi_main_light = const Color(0xFFF0F4FD);
+Color mobilhi_main_light2 = const Color(0xFF515F89);
+Color mobilhi_main_light3 = const Color(0xFFC7D1E9);
 Color mobilhi_sub = const Color(0xFFBFD42F);
+Color mobilhi_sub_light = const Color(0xFFDBE1B5);
+Color mobilhi_sub_light2 = const Color(0xFFC4CD85);
+Color mobilhi_black_1 = const Color(0xFF565E72);
 Color mobilhi_grey_1 = const Color(0xFF818181);
 Color mobilhi_grey_2 = const Color(0xFFE6E6E6);
 Color mobilhi_grey_3 = const Color(0xFFF6F6F6);
+Color mobilhi_grey_4 = const Color(0xFFCFD4D7);
+Color mobilhi_grey_5 = const Color(0xFFD9D9D9);
+Color mobilhi_back = const Color(0xFFF2F3F7);
 Color mobilhi_red = const Color(0xFFFF0000);
 Color mobilhi_blue = const Color(0xFF0070C0);
+Color mobilhi_red_2 = const Color(0xFFF59495);
+Color mobilhi_blue_2 = const Color(0xFF87B9DD);
+Color mobilhi_font_red = const Color(0xFFBA5D5B);
+Color mobilhi_font_blue = const Color(0xFF5F6E94);
 
 Color samchully_main_1 = const Color(0xFF00AAF2);
 Color samchully_main_2 = const Color(0xFF056AA6);

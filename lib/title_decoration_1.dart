@@ -5,8 +5,9 @@ import 'package:utile/textstyle.dart';
 class TitleDecoration1 extends StatefulWidget {
   final String text;
   final Color? color;
+  final double? font_size;
 
-  const TitleDecoration1({super.key, required this.text, this.color});
+  const TitleDecoration1({super.key, required this.text, this.color, this.font_size});
 
   @override
   State<TitleDecoration1> createState() => _TitleDecoration1State();
@@ -58,7 +59,7 @@ class _TitleDecoration1State extends State<TitleDecoration1> {
         ),
         Text(
           widget.text,
-          style: black(20, FontWeight.w700),
+          style: black(widget.font_size ?? 20, FontWeight.w700),
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -52,17 +53,43 @@ void Save_Log_login(String number) async {
   }
 }
 
-void Save_Log_login_false(String number, String pass) async {
+void Save_Log_login_false(String number, String pass, [Map<String, dynamic>? else_data]) async {
   final FirebaseFirestore store = FirebaseFirestore.instance;
   Map<String, String> date_time = Get_Times();
 
   try {
     String crypt_id = cryption(true, number);
     String crypt_pass = cryption(true, pass);
-
-    await store.collection('LoginFalse').doc(date_time["date"]).set({
+    Map<String, dynamic> data = {
       date_time['time'] ?? '': {'number': crypt_id, 'pass': crypt_pass}
-    }, SetOptions(merge: true));
+    };
+
+    if (else_data != null) {
+      String firstKey = data.keys.toList().first;
+      data[firstKey]['else_data'] = jsonEncode(else_data);
+    }
+
+    await store.collection('LoginFalse').doc(date_time["date"]).set(data, SetOptions(merge: true));
+  } catch (e) {
+    print(e);
+  }
+}
+
+void Save_Log_Join_False(Map<String, dynamic> data) async {
+  final FirebaseFirestore store = FirebaseFirestore.instance;
+  Map<String, String> date_time = Get_Times();
+
+  try {
+    Map<String, dynamic> cryptData = {};
+    data.forEach(
+      (key, value) {
+        cryptData[key] = cryption(true, value);
+      },
+    );
+
+    Map<String, dynamic> datas = {date_time['time'] ?? '': cryptData};
+
+    await store.collection('LoginFalse').doc(date_time["date"]).set(datas, SetOptions(merge: true));
   } catch (e) {
     print(e);
   }
