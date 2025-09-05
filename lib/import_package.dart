@@ -17,5 +17,7 @@ export 'package:auto_size_text/auto_size_text.dart';
 export 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 export 'package:widget_zoom/widget_zoom.dart';
 export 'package:url_launcher/url_launcher.dart';
+export 'package:url_launcher/url_launcher_string.dart';
 export 'package:dropdown_button2/dropdown_button2.dart';
 export 'package:device_info_plus/device_info_plus.dart';
+export 'package:flutter_secure_storage/flutter_secure_storage.dart';

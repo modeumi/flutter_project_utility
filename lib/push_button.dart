@@ -1,5 +1,5 @@
 import 'package:utile/color.dart';
-import 'package:utile/size.dart';
+import 'package:utile/import_package.dart';
 
 import 'package:utile/textstyle.dart';
 
@@ -26,7 +26,7 @@ class _PushButtonState extends State<PushButton> {
     return GestureDetector(
       onTap: widget.action,
       child: Container(
-        width: full_width(context),
+        width: 1.0.sw,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: (widget.state ?? false) ? widget.color : widget.deactivate),
         child: Center(

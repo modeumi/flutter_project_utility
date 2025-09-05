@@ -1,8 +1,7 @@
 import 'dart:io';
 
+import 'package:utile/import_package.dart';
 import 'package:utile/textstyle.dart';
-
-import 'package:utile/size.dart';
 
 import 'package:flutter/material.dart';
 
@@ -18,14 +17,14 @@ class _VersionUpdateState extends State<VersionUpdate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: full_width(context),
-      height: full_height(context),
+      width: 1.0.sw,
+      height: 1.0.sh,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(color: Colors.grey.withOpacity(0.6)),
       child: Center(
         child: Container(
-          width: full_width(context) * 0.9,
-          height: full_height(context) * 0.4,
+          width: 1.0.sw * 0.9,
+          height: 1.0.sh * 0.4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
