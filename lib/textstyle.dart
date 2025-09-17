@@ -6,7 +6,7 @@ TextStyle black(double size, FontWeight weight) {
     fontFamily: 'Pretendard',
     fontSize: size,
     fontWeight: weight,
-    color: Colors.black,
+    color: Color(0xFF141414),
   );
 }
 

@@ -32,6 +32,8 @@ Color back_grey_2 = const Color(0xFFEAEAEA);
 Color back_grey_3 = const Color(0xFFF7F7F7);
 
 Color font_color_blue = const Color(0xFF152872);
+Color font_light_black = const Color(0xFF141414);
+Color font_grey = const Color(0xFF818181);
 
 Color manage_main_color = const Color(0xFF4BA5CA);
 Color manage_sub_color = const Color(0xFF152872);
