@@ -1,6 +1,7 @@
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:get/get.dart' hide Response;
-export 'package:http/http.dart' show get, post, delete, Response;
+export 'package:http/http.dart' show get, post, delete, Response, MultipartRequest;
+export 'package:html/parser.dart' show parse;
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
@@ -21,3 +22,4 @@ export 'package:url_launcher/url_launcher_string.dart';
 export 'package:dropdown_button2/dropdown_button2.dart';
 export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_secure_storage/flutter_secure_storage.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
