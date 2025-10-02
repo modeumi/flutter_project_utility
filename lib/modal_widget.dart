@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:utile/color.dart';
-import 'package:utile/textstyle.dart';
+import 'package:utility/color.dart';
+import 'package:utility/textstyle.dart';
 
 class ModalWidget extends StatefulWidget {
   final String title;

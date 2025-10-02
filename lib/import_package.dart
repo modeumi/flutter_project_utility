@@ -23,3 +23,4 @@ export 'package:dropdown_button2/dropdown_button2.dart';
 export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_secure_storage/flutter_secure_storage.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:intl/intl.dart';

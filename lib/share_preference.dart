@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:utile/fire_base.dart';
+import 'package:utility/fire_base.dart';
 
 class SharePreference {
   SharedPreferencesAsync prefs = SharedPreferencesAsync();

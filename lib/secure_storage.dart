@@ -1,5 +1,5 @@
-import 'package:utile/fire_base.dart';
-import 'package:utile/toast_message.dart';
+import 'package:utility/fire_base.dart';
+import 'package:utility/toast_message.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 

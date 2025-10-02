@@ -1,5 +1,5 @@
-import 'package:utile/color.dart';
-import 'package:utile/textstyle.dart';
+import 'package:utility/color.dart';
+import 'package:utility/textstyle.dart';
 
 import 'package:flutter/material.dart';
 

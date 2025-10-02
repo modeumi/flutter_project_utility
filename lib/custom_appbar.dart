@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:utile/textstyle.dart';
+import 'package:utility/textstyle.dart';
 
 class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
   final VoidCallback action;

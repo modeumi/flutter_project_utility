@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:utile/color.dart';
-import 'package:utile/textstyle.dart';
+import 'package:utility/color.dart';
+import 'package:utility/textstyle.dart';
 
 class TitleDecoration1 extends StatefulWidget {
   final String text;

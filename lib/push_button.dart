@@ -1,7 +1,7 @@
-import 'package:utile/color.dart';
-import 'package:utile/import_package.dart';
+import 'package:utility/color.dart';
+import 'package:utility/import_package.dart';
 
-import 'package:utile/textstyle.dart';
+import 'package:utility/textstyle.dart';
 
 import 'package:flutter/material.dart';
 

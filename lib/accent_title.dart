@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:utile/color.dart';
+import 'package:utility/color.dart';
 import 'dart:ui' as ui;
 
-import 'package:utile/textstyle.dart';
+import 'package:utility/textstyle.dart';
 
 class AccentTitle extends StatefulWidget {
   final String title;
