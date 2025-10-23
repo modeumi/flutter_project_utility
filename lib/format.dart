@@ -46,6 +46,7 @@ String date_to_string_MMdd(String type, DateTime date) {
     }
     return format_date;
   } catch (e) {
+    print('에러 내용 : $e');
     return date.toString();
   }
 }

@@ -1,6 +1,5 @@
 import 'package:utility/color.dart';
 import 'package:utility/textstyle.dart';
-
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
