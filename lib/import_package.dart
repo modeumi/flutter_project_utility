@@ -6,7 +6,6 @@ export 'package:flutter_svg/flutter_svg.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:firebase_core/firebase_core.dart';
-export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_remote_config/firebase_remote_config.dart';
 export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 export 'package:loading_animation_widget/loading_animation_widget.dart';

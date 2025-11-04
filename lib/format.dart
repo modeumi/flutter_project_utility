@@ -82,24 +82,36 @@ String reformat_date(String type, String date) {
 String reforme_time_short(String type, String time) {
   final regExp_pattern = RegExp(r'\b\d{2}:\d{2}:\d{2}\b');
   String return_time = time;
-  if (regExp_pattern.hasMatch(time)) {
+  final match_time = regExp_pattern.firstMatch(time);
+  String? reform_time = match_time?.group(0);
+  if (reform_time != null) {
     if (type == ':') {
-      List<String> split_time = time.split(':').sublist(0, 2);
+      List<String> split_time = reform_time.split(':').sublist(0, 2);
       return_time = split_time.join(':');
     } else if (type == 'kor') {
-      List<String> split_time = time.split(':').sublist(0, 2);
+      List<String> split_time = reform_time.split(':').sublist(0, 2);
       return_time = '${split_time[0]}시${split_time[1]}분';
-    } else if (type == 'mkor') {
-      List<String> split_time = time.split(':').sublist(0, 2);
+    } else if (type.contains('m')) {
+      List<String> split_time = reform_time.split(':').sublist(0, 2);
       int hour = int.parse(split_time[0]);
       String midnight = '오전';
+
       if (hour > 12) {
-        hour = hour - 12;
+        hour -= 12;
         midnight = '오후';
       } else if (hour == 12) {
         midnight = '오후';
       }
-      return_time = '$midnight ${split_time[0]}시${split_time[1]}분';
+
+      if (hour == 0) {
+        hour = 12;
+      }
+
+      if (type == 'mkor') {
+        return_time = '$midnight $hour시${split_time[1]}분';
+      } else if (type == 'm:') {
+        return_time = '$midnight $hour:${split_time[1]}';
+      }
     }
   }
   return return_time;

@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:utility/color.dart';
 import 'package:utility/textstyle.dart';
@@ -10,14 +9,20 @@ class ModalWidget extends StatefulWidget {
   final String? content;
   final Widget? contentWidget;
   final bool? select_button;
+  final double? width;
   final VoidCallback action;
+  final String? submitButtonContent;
+  final String? cancleButtonContent;
   const ModalWidget({
     Key? key,
     required this.title,
     this.content,
     this.contentWidget,
     this.select_button,
+    this.width,
     required this.action,
+    this.submitButtonContent,
+    this.cancleButtonContent,
   }) : super(key: key);
 
   @override
@@ -31,7 +36,7 @@ class _ModalWidgetState extends State<ModalWidget> {
       insetPadding: const EdgeInsets.symmetric(horizontal: 20),
       elevation: 10,
       child: Container(
-          width: 1.0.sw,
+          width: widget.width ?? double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: color_white,
@@ -41,14 +46,14 @@ class _ModalWidgetState extends State<ModalWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 1.0.sw,
+                width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1, color: color_grey))),
                 child: Center(child: asText(widget.title, custom(20, FontWeight.w700, color_black))),
               ),
               if (widget.content != null)
                 Container(
-                  width: 1.0.sw,
+                  width: double.infinity,
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Text(
                     widget.content!,
@@ -60,16 +65,21 @@ class _ModalWidgetState extends State<ModalWidget> {
               if (widget.select_button ?? false)
                 GestureDetector(
                   onTap: () {
-                    Get.back();
+                    try {
+                      Get.back();
+                    } catch (e) {
+                      Navigator.pop(context);
+                    }
+                    widget.action();
                   },
                   child: Container(
-                    width: 1.0.sw,
+                    width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     decoration: BoxDecoration(border: Border(top: BorderSide(width: 1, color: color_grey))),
                     child: Center(
                       child: Text(
                         '확인',
-                        style: black(15, FontWeight.w700),
+                        style: black(20, FontWeight.w700),
                       ),
                     ),
                   ),
@@ -82,7 +92,11 @@ class _ModalWidgetState extends State<ModalWidget> {
                         Flexible(
                           child: GestureDetector(
                             onTap: () {
-                              Get.back();
+                              try {
+                                Get.back();
+                              } catch (e) {
+                                Navigator.pop(context);
+                              }
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -91,8 +105,8 @@ class _ModalWidgetState extends State<ModalWidget> {
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: Center(
                                 child: Text(
-                                  '아니오',
-                                  style: custom(15, FontWeight.w700, color_grey),
+                                  widget.cancleButtonContent ?? '아니오',
+                                  style: custom(20, FontWeight.w700, color_grey),
                                 ),
                               ),
                             ),
@@ -110,8 +124,8 @@ class _ModalWidgetState extends State<ModalWidget> {
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: Center(
                                 child: Text(
-                                  '예',
-                                  style: custom(15, FontWeight.w700, color_black),
+                                  widget.submitButtonContent ?? '예',
+                                  style: custom(20, FontWeight.w700, color_black),
                                 ),
                               ),
                             ),
