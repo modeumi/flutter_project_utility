@@ -11,10 +11,15 @@ import 'package:utility/crypto.dart';
 
 Map<String, String> Get_Times() {
   String now_date = date_to_string_yyyyMMdd('-', DateTime.now());
-  String now_time = time_to_string_HHmmssSSS(DateTime.now());
+  String now_time = time_to_string('hmss', DateTime.now());
+  int hour = int.parse(now_time.split(':').first);
+  String meridiem = 'am';
+  if (hour > 11) {
+    meridiem = 'pm';
+  }
   String microsecond = DateTime.now().microsecond.toString();
 
-  return {'date': now_date, 'time': '$now_time$microsecond'};
+  return {'date': now_date, 'time': '$now_time$microsecond', 'meridiem': meridiem};
 }
 
 void Save_Log(String page, String history) async {

@@ -30,6 +30,12 @@ String date_to_string_yyyyMMdd(String type, dynamic date) {
     format_date = DateFormat("yyyy.MM.dd").format(request_date);
   } else if (type == 'kor') {
     format_date = DateFormat("yyyy년 MM월 dd일").format(request_date);
+  } else if (type == 'kor_date') {
+    format_date = DateFormat('yyyy년 MM월 dd일 EEEE', 'ko_KR').format(request_date);
+  } else if (type == 's.') {
+    format_date = DateFormat("yy.MM.dd").format(request_date);
+  } else if (type == 'skor') {
+    format_date = DateFormat("yy년 MM월 dd일").format(request_date);
   }
   return format_date;
 }
@@ -51,6 +57,19 @@ String date_to_string_MMdd(String type, DateTime date) {
   }
 }
 
+// String reformat_date(String type, String date) {
+//   DateTime format_date = DateTime.parse(date);
+//   String format = '';
+//   if (type == '.') {
+//     format = DateFormat("yyyy.MM.dd").format(format_date);
+//   } else if (type == '-') {
+//     format = DateFormat("yyyy-MM-dd").format(format_date);
+//   } else if (type == 'kor') {
+//     format = DateFormat("yy년 MM월 dd일").format(format_date);
+//   } else if (type == 's.') {}
+//   return format;
+// }
+
 dynamic dynamic_to_string_like_pay(dynamic pay) {
   try {
     if (pay is int) {
@@ -62,21 +81,6 @@ dynamic dynamic_to_string_like_pay(dynamic pay) {
   } catch (e) {
     return pay;
   }
-}
-
-String reformat_date(String type, String date) {
-  DateTime format_date = DateTime.parse(date);
-  String format = '';
-  if (type == '.') {
-    format = DateFormat("yyyy.MM.dd").format(format_date);
-  } else if (type == '-') {
-    format = DateFormat("yyyy-MM-dd").format(format_date);
-  } else if (type == 'kor') {
-    format = DateFormat("yy년 MM월 dd일").format(format_date);
-  } else if (type == 's.') {
-    format = DateFormat("yy.MM.dd").format(format_date);
-  }
-  return format;
 }
 
 String reforme_time_short(String type, String time) {
@@ -117,17 +121,6 @@ String reforme_time_short(String type, String time) {
   return return_time;
 }
 
-String date_to_String_yyyyMMdddate_Kor(String type, DateTime date) {
-  String return_date = '';
-  if (type == 'new_line') {
-    return_date = DateFormat('yyyy년\nMM월 dd일 EEEE', 'ko_KR').format(date);
-  } else if (type == 'normal') {
-    return_date = DateFormat('yyyy년 MM월 dd일 EEEE', 'ko_KR').format(date);
-  }
-
-  return return_date;
-}
-
 DateTime Stringtime_to_Date_defaultday(String time) {
   DateTime now = DateTime.now();
   List<String> split_time = time.split(':');
@@ -137,21 +130,6 @@ DateTime Stringtime_to_Date_defaultday(String time) {
   } catch (e) {
     return DateTime(now.year, now.month, now.day, 23, 59, 59);
   }
-}
-
-String time_to_string_HHmmssSSS(DateTime date) {
-  String return_date = DateFormat('HH:mm:ss.SSS').format(date);
-  return return_date;
-}
-
-String time_to_string_HHmmss(DateTime date) {
-  String return_date = DateFormat('HH:mm:ss').format(date);
-  return return_date;
-}
-
-String time_to_string_HHmm(DateTime date) {
-  String return_date = DateFormat('HH:mm').format(date);
-  return return_date;
 }
 
 String time_to_string(String type, DateTime date) {
