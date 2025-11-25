@@ -40,15 +40,21 @@ String date_to_string_yyyyMMdd(String type, dynamic date) {
   return format_date;
 }
 
-String date_to_string_MMdd(String type, DateTime date) {
+String date_to_string_MMdd(String type, dynamic date) {
+  DateTime request_date;
+  if (date.runtimeType == String) {
+    request_date = DateTime.parse(date);
+  } else {
+    request_date = date;
+  }
   try {
     String format_date = '';
     if (type == '-') {
-      format_date = DateFormat("MM-dd").format(date);
+      format_date = DateFormat("MM-dd").format(request_date);
     } else if (type == 'kor') {
-      format_date = DateFormat("M월 d일").format(date);
+      format_date = DateFormat("MM월 dd일").format(request_date);
     } else if (type == 'kor_date') {
-      format_date = DateFormat('MM월 dd일 EEEE', 'ko_KR').format(date);
+      format_date = DateFormat('MM월 dd일 EEEE', 'ko_KR').format(request_date);
     }
     return format_date;
   } catch (e) {
@@ -107,12 +113,8 @@ String reforme_time_short(String type, String time) {
         midnight = '오후';
       }
 
-      if (hour == 0) {
-        hour = 12;
-      }
-
       if (type == 'mkor') {
-        return_time = '$midnight $hour시${split_time[1]}분';
+        return_time = '$midnight $hour시 ${split_time[1]}분';
       } else if (type == 'm:') {
         return_time = '$midnight $hour:${split_time[1]}';
       }
@@ -135,7 +137,7 @@ DateTime Stringtime_to_Date_defaultday(String time) {
 String time_to_string(String type, DateTime date) {
   String return_data = '';
   if (type == 'hmss') {
-    return_data = DateFormat('HH:mm:ss SSS').format(date);
+    return_data = DateFormat('HH:mm:ss.SSS').format(date);
   } else if (type == 'hms') {
     return_data = DateFormat('HH:mm:ss').format(date);
   } else if (type == 'hm') {
@@ -143,7 +145,7 @@ String time_to_string(String type, DateTime date) {
   } else if (type == 'ms') {
     return_data = DateFormat('mm:ss').format(date);
   } else if (type == 'mss') {
-    return_data = DateFormat('mm:ss SSS').format(date);
+    return_data = DateFormat('mm:ss.SSS').format(date);
   }
   return return_data;
 }
@@ -172,6 +174,20 @@ String time_calculation(DateTime dateTime) {
   }
 }
 
+String date_calculation(DateTime date) {
+  final now = DateTime.now();
+  final difference = now.difference(date);
+  if (difference.inDays == 0) {
+    return '오늘';
+  } else if (difference.inDays > 0) {
+    return '${difference.inDays}일 지남';
+  } else if (difference.inDays < 0) {
+    return '${difference.inDays.abs()}일 전';
+  } else {
+    return '';
+  }
+}
+
 String int_to_unit_string(int count) {
   if (count >= 100000) {
     String unit = '99k+';
@@ -183,4 +199,9 @@ String int_to_unit_string(int count) {
     return unit;
   }
   return count.toString();
+}
+
+String getWeekdayLetter(DateTime date) {
+  List<String> weekdays = ['월', '화', '수', '목', '금', '토', '일'];
+  return weekdays[date.weekday - 1];
 }
