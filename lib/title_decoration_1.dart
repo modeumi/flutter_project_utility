@@ -6,8 +6,10 @@ class TitleDecoration1 extends StatefulWidget {
   final String text;
   final Color? color;
   final double? font_size;
+  final double? radius;
+  final FontWeight? font_weight;
 
-  const TitleDecoration1({super.key, required this.text, this.color, this.font_size});
+  const TitleDecoration1({super.key, required this.text, this.color, this.font_size, this.radius, this.font_weight});
 
   @override
   State<TitleDecoration1> createState() => _TitleDecoration1State();
@@ -55,11 +57,12 @@ class _TitleDecoration1State extends State<TitleDecoration1> {
         Container(
           width: 5,
           height: textHeight!, // 텍스트 높이의 2배
-          color: widget.color ?? color_black,
+          decoration:
+              BoxDecoration(color: widget.color ?? color_black, borderRadius: widget.radius != null ? BorderRadius.circular(widget.radius!) : null),
         ),
         Text(
           widget.text,
-          style: black(widget.font_size ?? 20, FontWeight.w700),
+          style: black(widget.font_size ?? 20, widget.font_weight ?? FontWeight.w700),
         ),
       ],
     );

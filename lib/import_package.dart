@@ -1,6 +1,6 @@
 export 'package:flutter_screenutil/flutter_screenutil.dart';
-export 'package:get/get.dart' hide Response;
-export 'package:http/http.dart' show get, post, delete, Response, MultipartRequest;
+export 'package:get/get.dart' hide Response, MultipartFile;
+export 'package:http/http.dart' show get, post, delete, Response, MultipartRequest, MultipartFile;
 export 'package:html/parser.dart' show parse;
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';

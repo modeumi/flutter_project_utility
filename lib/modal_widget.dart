@@ -108,7 +108,7 @@ class _ModalWidgetState extends State<ModalWidget> {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    border: Border(right: BorderSide(width: 0.5, color: mobilhi_grey_1)),
+                                    border: Border(right: BorderSide(width: 0.5, color: color_grey)),
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 15),
                                   child: Center(
@@ -127,7 +127,7 @@ class _ModalWidgetState extends State<ModalWidget> {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    border: Border(left: BorderSide(width: 0.5, color: mobilhi_grey_1)),
+                                    border: Border(left: BorderSide(width: 0.5, color: color_grey)),
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 15),
                                   child: Center(
