@@ -16,6 +16,8 @@ Color jj_pink = const Color(0xFFF84264);
 Color jj_red = const Color(0xFFA7001F);
 Color jj_magenta = const Color(0xFFF81336);
 
+Color seoulsoftRed = const Color(0xFF870200);
+
 Color color_lightgrey = const Color(0xFFC0C0C0);
 Color color_lightgrey2 = const Color(0xFFF2F2F2);
 Color color_grey = const Color(0xFFA9A9A9);

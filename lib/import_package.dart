@@ -25,3 +25,5 @@ export 'package:flutter_secure_storage/flutter_secure_storage.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:intl/intl.dart';
 export 'package:intl/date_symbol_data_local.dart';
+export 'package:terminate_restart/terminate_restart.dart';
+export 'package:flutter_blue_plus/flutter_blue_plus.dart';
