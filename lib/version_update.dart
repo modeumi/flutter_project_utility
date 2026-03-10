@@ -47,9 +47,9 @@ class _VersionUpdateState extends State<VersionUpdate> {
                 padding: const EdgeInsets.all(
                   10.0,
                 ),
-                child: Text(
+                child: asText(
                   '새로운 업데이트가 발생하였습니다.\n원활한 사용을 위하여 앱을 업데이트 해주세요.',
-                  style: black(20, FontWeight.w500),
+                  black(20, FontWeight.w500),
                 ),
               ),
               Container(

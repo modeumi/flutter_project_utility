@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-Color bumil_orange = const Color(0xFFFF6E00);
-Color bumil_lightorange = const Color(0xFFFFC090);
-Color bumil_lightorange2 = const Color.fromARGB(255, 255, 230, 211);
-Color bumil_red = const Color(0xFfE41937);
-
 Color cc_green = const Color(0xFF48735F);
 Color cc_green_new = const Color(0xFF047732);
 Color cc_lightgreen = const Color(0xFF4F8C6F);
