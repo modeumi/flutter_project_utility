@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
-import 'package:utility/secure_storage.dart';
 import 'package:utility/format.dart';
 
 import 'package:utility/crypto.dart';
@@ -22,35 +21,16 @@ Map<String, String> Get_Times() {
   return {'date': now_date, 'time': '$now_time$microsecond', 'meridiem': meridiem};
 }
 
-void Save_Log(String page, String history) async {
+void Save_Log(String number, String page, String history) async {
   final FirebaseFirestore store = FirebaseFirestore.instance;
-  final SecureStorage storage = SecureStorage();
   Map<String, String> date_time = Get_Times();
 
-  String number = await storage.read('id');
   if (number[0] == '0') {
     number = number.substring(1);
   }
   try {
     await store.collection('Log').doc('${date_time["date"]}_$number').set(
       {date_time['time'] ?? '': '$page : $history'},
-      SetOptions(merge: true),
-    );
-  } catch (e) {
-    print(e);
-  }
-}
-
-void Save_Log_login(String number) async {
-  final FirebaseFirestore store = FirebaseFirestore.instance;
-  Map<String, String> date_time = Get_Times();
-
-  if (number[0] == '0') {
-    number = number.substring(1);
-  }
-  try {
-    await store.collection('Log').doc('${date_time["date"]}_$number').set(
-      {date_time['time'] ?? '': 'Login Success'},
       SetOptions(merge: true),
     );
   } catch (e) {
