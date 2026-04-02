@@ -29,8 +29,13 @@ void Save_Log(String number, String page, String history) async {
     number = number.substring(1);
   }
   try {
-    await store.collection('Log').doc('${date_time["date"]}_$number').set(
-      {date_time['time'] ?? '': '$page : $history'},
+    await store.collection('Log').doc('${date_time["date"]}_${date_time['meridiem']}').set(
+      {
+        date_time['time'] ?? '': {
+          'id': number,
+          'log': '$page : $history',
+        }
+      },
       SetOptions(merge: true),
     );
   } catch (e) {
