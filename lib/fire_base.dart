@@ -25,9 +25,6 @@ void Save_Log(String number, String page, String history) async {
   final FirebaseFirestore store = FirebaseFirestore.instance;
   Map<String, String> date_time = Get_Times();
 
-  if (number[0] == '0') {
-    number = number.substring(1);
-  }
   try {
     await store.collection('Log').doc('${date_time["date"]}_${date_time['meridiem']}').set(
       {
