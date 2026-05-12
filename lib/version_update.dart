@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:utility/color.dart';
 import 'package:utility/import_package.dart';
 import 'package:utility/textstyle.dart';
 
@@ -59,14 +60,13 @@ class _VersionUpdateState extends State<VersionUpdate> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(
-                      flex: 5,
+                    Expanded(
                       child: GestureDetector(
                         onTap: () {
                           exit(0);
                         },
                         child: Container(
-                          decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.grey[300]!, width: 1))),
+                          decoration: BoxDecoration(color: color_white, border: Border(right: BorderSide(color: Colors.grey[300]!, width: 1))),
                           width: double.infinity,
                           child: Text(
                             '취소',
@@ -76,14 +76,13 @@ class _VersionUpdateState extends State<VersionUpdate> {
                         ),
                       ),
                     ),
-                    Flexible(
-                      flex: 5,
+                    Expanded(
                       child: GestureDetector(
                         onTap: () {
                           widget.action!();
                         },
-                        child: SizedBox(
-                          width: double.infinity,
+                        child: Container(
+                          decoration: BoxDecoration(color: color_white),
                           child: Text(
                             '업데이트',
                             textAlign: TextAlign.center,
