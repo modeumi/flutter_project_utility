@@ -6,8 +6,6 @@ import 'package:get/route_manager.dart';
 import 'package:utility/color.dart';
 import 'package:utility/textstyle.dart';
 
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
 void alertMessage(String message, String type, [bool? appExit]) {
   Color baseColor() {
     if (type == 'success') {
