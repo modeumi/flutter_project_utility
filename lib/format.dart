@@ -76,16 +76,16 @@ String date_to_string_MMdd(String type, dynamic date) {
 //   return format;
 // }
 
-dynamic dynamic_to_string_like_pay(dynamic pay) {
+dynamic dynamic_to_string_like_salary(dynamic salary) {
   try {
-    if (pay is int) {
-      String format_pay = NumberFormat('###,###,###,###').format(pay);
-      return format_pay;
+    if (salary is int) {
+      String format_salary = NumberFormat('###,###,###,###').format(salary);
+      return format_salary;
     } else {
-      return pay;
+      return salary;
     }
   } catch (e) {
-    return pay;
+    return salary;
   }
 }
 
