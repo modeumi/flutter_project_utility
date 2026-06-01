@@ -56,7 +56,7 @@ void Save_Log_login_false(String number, String pass, [Map<String, dynamic>? els
       data[firstKey]['else_data'] = jsonEncode(else_data);
     }
 
-    await store.collection('LoginFalse').doc(date_time["date"]).set(data, SetOptions(merge: true));
+    await store.collection('LoginFailure').doc(date_time["date"]).set(data, SetOptions(merge: true));
   } catch (e) {
     print(e);
   }
@@ -76,7 +76,7 @@ void Save_Log_Join_False(Map<String, dynamic> data) async {
 
     Map<String, dynamic> datas = {date_time['time'] ?? '': cryptData};
 
-    await store.collection('LoginFalse').doc(date_time["date"]).set(datas, SetOptions(merge: true));
+    await store.collection('LoginFailure').doc(date_time["date"]).set(datas, SetOptions(merge: true));
   } catch (e) {
     print(e);
   }
