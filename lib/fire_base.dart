@@ -40,7 +40,7 @@ void Save_Log(String number, String page, String history) async {
   }
 }
 
-void Save_Log_login_false(String number, String pass, [Map<String, dynamic>? else_data]) async {
+void saveLogLoginFailure(String number, String pass, [Map<String, dynamic>? else_data]) async {
   final FirebaseFirestore store = FirebaseFirestore.instance;
   Map<String, String> date_time = Get_Times();
 
@@ -62,7 +62,7 @@ void Save_Log_login_false(String number, String pass, [Map<String, dynamic>? els
   }
 }
 
-void Save_Log_Join_False(Map<String, dynamic> data) async {
+void saveLogJoinFailure(Map<String, dynamic> data) async {
   final FirebaseFirestore store = FirebaseFirestore.instance;
   Map<String, String> date_time = Get_Times();
 
