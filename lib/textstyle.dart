@@ -79,26 +79,26 @@ TextStyle orange_wh(double size, FontWeight weight, double height) {
   );
 }
 
-AutoSizeText asText(String text, TextStyle style, [TextAlign? align, TextOverflow? overflow, int? maxlines]) {
+AutoSizeText asText(String text, TextStyle style, {TextAlign? textAlign, TextOverflow? overflow, int? maxlines}) {
   return AutoSizeText(
     text,
     style: style,
-    textAlign: align,
+    textAlign: textAlign,
     maxLines: maxlines ?? 1,
     minFontSize: 3,
     overflow: overflow,
   );
 }
 
-Flexible Flex_asText(int flex, String text, TextStyle style, [TextAlign? aling, TextOverflow? overflow, int? maxline]) {
+Flexible Flex_asText(int flex, String text, TextStyle style, {TextAlign? textAlign, TextOverflow? overflow, int? maxlines}) {
   return Flexible(
     flex: flex,
     child: AutoSizeText(
       text,
       style: style,
-      textAlign: aling,
+      textAlign: textAlign,
       overflow: overflow,
-      maxLines: maxline ?? 1,
+      maxLines: maxlines ?? 1,
       minFontSize: 5,
     ),
   );
