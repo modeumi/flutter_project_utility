@@ -41,7 +41,7 @@ class _VersionUpdateState extends State<VersionUpdate> {
                 child: asText(
                   '업데이트 안내',
                   black(25, FontWeight.w700),
-                  TextAlign.center,
+                  textAlign: TextAlign.center,
                 ),
               ),
               Padding(
