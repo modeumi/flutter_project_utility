@@ -17,13 +17,13 @@ dependencies:
   auto_size_text: ^3.0.0
   carousel_slider: ^5.0.0
   oktoast: ^3.4.0 # 해당 패키지도 전 프로젝트 사용하나 대중적인것으로 변경 고민
-  device_info_plus: ^11.2.0
+  device_info_plus: ^13.1.0
   permission_handler: ^12.0.1
   url_launcher: ^6.3.2
   widget_zoom: ^0.0.4
   flutter_widget_from_html: ^0.17.0
   http: ^1.4.0
-  dropdown_button2: ^2.3.9
+  dropdown_button2: ^3.1.0
   flutter_svg: ^2.2.0
   html: ^0.15.6
 
@@ -32,15 +32,15 @@ dependencies:
   table_calendar: ^3.1.2
   get: ^4.6.6
   encrypt: ^5.0.3
-  flutter_dotenv: ^5.2.1
+  flutter_dotenv: ^6.0.1
   flutter_screenutil: ^5.9.3
-  flutter_local_notifications: ^19.4.0
-  package_info_plus: ^8.3.0 # 자동 업데이트 관련 패키지
+  flutter_local_notifications: ^22.0.1
+  package_info_plus: ^10.1.0 # 자동 업데이트 관련 패키지
   intl: ^0.20.2
   terminate_restart: ^1.0.11 # 앱 강제 종료 및 재실행 
 
   # 데이터 디바이스 저장 패키지
-  flutter_secure_storage: ^9.2.2 # 해당 패키지는 일부 프로젝트만 사용중
+  flutter_secure_storage: ^10.3.1 # 해당 패키지는 일부 프로젝트만 사용중
   shared_preferences: ^2.3.3
 
   # firebase 필수 패키지
@@ -53,7 +53,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
