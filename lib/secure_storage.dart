@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 
 class SecureStorage extends GetxController {
   FlutterSecureStorage storage = const FlutterSecureStorage(
-      aOptions: AndroidOptions(
-    encryptedSharedPreferences: true,
-  ));
+    aOptions: AndroidOptions(encryptedSharedPreferences: true),
+    iOptions: IOSOptions(accessibility: KeychainAccessibility.first_unlock_this_device),
+  );
   ToastMessage toast = ToastMessage();
 
   Future<void> save(String key, dynamic value) async {
